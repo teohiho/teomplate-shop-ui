@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="./assets/scss/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="./assets/js/script.js"></script>
+</head>
+<body>
+    <!-- Start Header Session -->
+    <header class="header">
+        <div>
+            <div class="header__top">
+                <div class="header__top--brand">
+                     TEO Shop
+                </div>
+                <div class="header__top--search">
+                    <input />
+                    <button>Search</button>
+                </div>
+                <div class="header__top--login">
+                    <i class="fa-solid fa-user mr-5"></i>Login
+                </div>
+            </div>
+            <nav class="header__navbar">
+                <div class="header__navbar--list">
+                    <ul>
+                        <li><a href="#web">Web Themes & Templates</a></li>
+                        <li><a href="#mobile">Mobile Themes & Templates</a></li>
+                        <li><a href="ui">UI Templates</a></li>
+                    </ul>
+                </div>
+                <div class="header__navbar--sub-list">
+                    <ul>
+                        <li><a href="#all">All items</a></li>
+                        <li><a href="#ecommerce">eCommerce</a></li>
+                        <li><a href="blog">Blogging</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- End Header Session -->
+
+    <!-- Start Body Session -->
+    <session class="body">
+        <div class="body__top">
+            <div class="breadcrumb">
+                <ul>
+                    <li aria-current="page">Home</li>
+                    <li>Web Themes & Templates</li>
+                    <li>eCommerce</li>
+                </ul>
+            </div>
+            <div class="body__top--title">
+                <h1>eCommerce</h1>
+            </div>
+        </div>
+        <div class="body__tool">
+            <button class="filter-btn">
+                <i class="fa-solid fa-xmark"></i>Filter
+            </button>
+        </div>
+        <div class="body__main">
+            <div class="body__main--filter">
+                <button class="filter-btn">
+                    <i class="fa-solid fa-xmark"></i>Filter
+                </button>
+                <div class="t_collapse">
+                    <button type="button" class="t_collapse__btn">
+                        Types
+                        <i class="fa-solid fa-angle-down"></i>
+                    </button>
+                    <div class="t_collapse__content">
+                        <ul>
+                            <li>
+                                <input id="premium" type="checkbox" value="premium" />
+                                <label for="premium" >Premium</label>
+                            </li>
+                            <li>
+                                <input id="free-download" type="checkbox" value="free-download" />
+                                <label for="free-download" >Free Download</label>
+                                
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button type="button" class="t_collapse__btn">Open Section 2</button>
+                    <div class="t_collapse__content">
+                        <div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="body__main--list">
+                <ul class="t_card">
+                    <li>
+                        <div class="t_card__image">
+                            <img src="./assets/img/template.png"/>
+                        </div>
+                        
+                        <div class="t_card__content">
+                            <h3>Template</h3>
+                            <p class="">90$</p>
+                            <div class="ranking">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                (50)
+                            </div>
+                            <div>
+                                <div>100 sales</div>
+                                <div class="t_btn_content">
+                                    <button class="t_btn t_btn__card">
+                                        <i><i class="fa-solid fa-cart-shopping"></i></i>
+                                    </button>
+                                    <button class="t_btn t_btn__live">Live Preview</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+    </session>
+    <!-- End Body Session -->
+
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+/*****************************************
+  Name: mixins.scss
+  Version: 1.0.20180726
+  Notes:
+    共用mixin
+*****************************************/
+
+@mixin clearfix(){
+	zoom: 1; /* for IE6/7 */
+	&:after {
+    content: '';
+    display: block;
+    clear: both;
+	}
+}
+
+@mixin cutoff () {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin reset() {
+	padding: 0px;
+	margin: 0px;
+}
+
+//animations////////////
+@mixin trans($time: 0.3s,$easing: ease, $property: all){
+	transition-property: $property;
+  transition-duration: $time;
+  transition-timing-function: $easing;
+}
+
+
+@mixin scale($arg) {
+  -moz-transform: scale(#{$arg}, #{$arg});
+  -ms-transform: scale(#{$arg}, #{$arg});
+  -webkit-transform: scale(#{$arg}, #{$arg});
+  transform: scale(#{$arg}, #{$arg})
+}
+
+//font styles///////////
+@mixin font-default () {
+	font-family: "メイリオ","Meiryo",arial,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,"ＭＳ Ｐゴシック","MS PGothic",Sans-Serif;
+}
+@mixin font-gothic () {
+	@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic);
+	font-family: Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+}
+@mixin font-mincho () {
+	font-family: Garamond, "Times New Roman", "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "HGS明朝E", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+}
+@mixin serif () {
+	font-family: serif;
+}
+@mixin georgia{
+  font-family: Georgia, serif;
+}

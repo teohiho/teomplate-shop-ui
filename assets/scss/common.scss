@@ -1,0 +1,178 @@
+// margin ///////////////////////
+@for $i from 1 through 300 {
+  .m-#{$i} {
+    margin: #{$i}px;
+  }
+  .mt-#{$i} {
+    margin-top: #{$i}px;
+  }
+  .mr-#{$i} {
+    margin-right: #{$i}px;
+  }
+  .mb-#{$i} {
+    margin-bottom: #{$i}px;
+  }
+  .ml-#{$i} {
+    margin-left: #{$i}px;
+  }
+}
+
+// padding ///////////////////////
+@for $i from 1 through 300 {
+  .p-#{$i} {
+    padding: #{$i}px;
+  }
+  .pt-#{$i} {
+    padding-top: #{$i}px;
+  }
+  .pr-#{$i} {
+    padding-right: #{$i}px;
+  }
+  .pb-#{$i} {
+    padding-bottom: #{$i}px;
+  }
+  .pl-#{$i} {
+    padding-left: #{$i}px;
+  }
+}
+
+// width ///////////////////////
+@for $i from 1 through 100 {
+  .w-#{$i} {
+    width: $i + 0%;
+  }
+}
+/*xs*/
+@media (max-width: 767px) {
+  @for $i from 1 through 100 {
+    .w-xs-#{$i} {
+      width: $i + 0%;
+    }
+  }
+}
+/*sm*/
+@media (min-width: 768px) and (max-width: 991px) {
+  @for $i from 1 through 100 {
+    .w-sm-#{$i} {
+      width: $i + 0%;
+    }
+  }
+}
+/*md*/
+@media (min-width: 992px) and (max-width: 1199px) {
+  @for $i from 1 through 100 {
+    .w-md-#{$i} {
+      width: $i + 0%;
+    }
+  }
+}
+/*lg*/
+@media (min-width: 1200px) {
+  @for $i from 1 through 100 {
+    .w-lg-#{$i} {
+      width: $i + 0%;
+    }
+  }
+}
+// font-size ///////////////////////
+.fz-xxl {
+  font-size: xx-large;
+}
+.fz-xl {
+  font-size: x-large;
+}
+.fz-l {
+  font-size: large;
+}
+.fz-m {
+  font-size: medium;
+}
+.fz-s {
+  font-size: small;
+}
+.fz-xs {
+  font-size: x-small;
+}
+.fz-xxs {
+  font-size: xx-small;
+}
+/*xs*/
+@media (max-width: 767px) {
+  $target: 'xs';
+  .fz-#{$target}-xxl {
+    font-size: xx-large;
+  }
+  .fz-#{$target}-xl {
+    font-size: x-large;
+  }
+  .fz-#{$target}-l {
+    font-size: large;
+  }
+  .fz-#{$target}-m {
+    font-size: medium;
+  }
+  .fz-#{$target}-s {
+    font-size: small;
+  }
+  .fz-#{$target}-xs {
+    font-size: x-small;
+  }
+  .fz-#{$target}-xxs {
+    font-size: xx-small;
+  }
+}
+/*sm*/
+@media (min-width: 768px) and (max-width: 991px) {
+  $target: 'sm';
+  .fz-#{$target}-xxl {
+    font-size: xx-large;
+  }
+  .fz-#{$target}-xl {
+    font-size: x-large;
+  }
+  .fz-#{$target}-l {
+    font-size: large;
+  }
+  .fz-#{$target}-m {
+    font-size: medium;
+  }
+  .fz-#{$target}-s {
+    font-size: small;
+  }
+  .fz-#{$target}-xs {
+    font-size: x-small;
+  }
+  .fz-#{$target}-xxs {
+    font-size: xx-small;
+  }
+}
+
+// float ///////////////////////
+.fl-l {
+  float: left;
+}
+.fl-r {
+  float: right;
+}
+
+// text-align ///////////////////////
+.ta-r {
+  text-align: right;
+}
+.ta-l {
+  text-align: left;
+}
+.ta-c {
+  text-align: center;
+}
+
+// font-weight ///////////////////////
+.fw-b {
+  font-weight: bold;
+}
+
+// poem ///////////////////////
+.poem {
+  line-height: 1.8em;
+  letter-spacing: 0.07em;
+}

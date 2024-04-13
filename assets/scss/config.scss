@@ -1,0 +1,63 @@
+/*==========================================
+  Name: config.scss
+  Version: 1.0.20210624
+==========================================*/
+
+/********************
+  colors
+********************/
+
+
+$COLOR_MAIN: #262626;
+$COLOR_BG: #FFFFFF;
+$COLOR_HEADER: #262626;
+$COLOR_SUB_HEADER: #F5F5F5;
+$COLOR_ACTIVE: #FFFFFF;
+$COLOR_NOT_ACTIVATED_YET: #CCCCCC;
+$COLOR_LINK: var(--COLOR_LINK);
+$COLOR_TEXT: #000000;
+$COLOR_TEXT_LIGHT: #666666;
+$COLOR_BREADCRUMB_ICON: #E40046;
+$COLOR_TITLE: #BEBEBE;
+
+$COLOR_SHADOW: var(--COLOR_SHADOW);
+$COLOR_TURN: var(--COLOR_TURN);
+$COLOR_BORDER: #666666;
+$COLOR_ICON: var(--COLOR_ICON);
+
+$COLOR_HEADER_TEXT: #FFFFFF;
+
+$COLOR_GREY_LIGHT: #FAFAFA;
+
+$VIEW_WIDTH: 930px;
+
+@mixin gradient-main() {
+  background: transparent linear-gradient(240deg, #FFCCCC 0%, var(--unnamed-color-6d86ff) 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(240deg, #FFCCCC 0%, #6D86FF 100%) 0% 0% no-repeat padding-box;
+}
+
+@mixin gradient-blue() {
+  background: transparent linear-gradient(262deg, #D1D9FF 0%, #002CFF 100%) 0% 0% no-repeat padding-box;
+}
+
+@mixin gradient-blue-reverse() {
+  background: transparent linear-gradient(270deg, #002CFF 0%, #D1D9FF 100%) 0% 0% no-repeat padding-box;
+}
+
+@mixin gradient-orange() {
+  background: transparent linear-gradient(250deg, #FF9900 0%, #FFCC80 100%) 0% 0% no-repeat padding-box;
+}
+
+@mixin gradient-list() {
+  background: transparent linear-gradient(180deg, var(--unnamed-color-ffffff00) 0%, #ECF2FF 49%, var(--unnamed-color-ffffff00) 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(180deg, #FFFFFF00 0%, #ECF2FF 49%, #FFFFFF00 100%) 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+/********************
+  font size
+********************/
+$FONTSIZE_TEXT: 12px;
+$FONTSIZE_ICON: 15px;
+
+
