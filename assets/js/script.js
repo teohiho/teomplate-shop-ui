@@ -43,10 +43,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
       var contentFilter = document.getElementsByClassName("body__main--filter");
       if (contentFilter[0].style.display === "block") {
         contentFilter[0].style.display = "none";
-        contentFilter[1].style.display = "block";
+        
       } else {
         contentFilter[0].style.display = "block";
-        contentFilter[1].style.display = "none";
       }
     });
   }

@@ -301,6 +301,11 @@ $c_name: '.t_collapse';
             font-weight: bold;
         }
     }
+
+    &__col {
+        display: flex;
+        justify-content: space-between;
+    }
   }
 
 
