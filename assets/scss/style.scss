@@ -1,419 +1,642 @@
-@import './config.scss';
-@import './mixins.scss';
-@import './common.scss';
-@import './reset.scss';
+@import "./config.scss";
+@import "./mixins.scss";
+@import "./common.scss";
+@import "./reset.scss";
 
 html {
-    box-sizing: border-box;
-    font-family: "Open Sans", sans-serif;
-    font-size: 16px;
-  }
-  
-*, *:before, *:after {
-    box-sizing: inherit;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 a {
-	color: inherit;
-    text-decoration: none;
-    //color: $COLOR_LINK;
-	&:hover {
-		opacity: 0.8;
-	}
+  color: inherit;
+  text-decoration: none;
+  //color: $COLOR_LINK;
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
-input[type=checkbox], input[type=radio] {
-    vertical-align: middle;
-    position: relative;
-    bottom: 1px;
+input[type="checkbox"],
+input[type="radio"] {
+  vertical-align: middle;
+  position: relative;
+  bottom: 1px;
 }
 
 // -------------- Start Header Session --------------
-$c_name: '.header';
+$c_name: ".header";
 #{$c_name} {
-    overflow: hidden;
-    background-color: $COLOR_HEADER;
-    box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
-    position: relative;
-    z-index: 10;
+  overflow: hidden;
+  background-color: $COLOR_HEADER;
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 10;
 
-    &__top {
+  &__top {
+    color: $COLOR_HEADER_TEXT;
+    display: flex;
+    justify-content: space-between;
+    row-gap: 1em;
+    align-items: center;
+    padding: 1em;
+    &--brand {
+    }
+    &--search {
+      align-items: center;
+      display: flex;
+      max-width: 600px;
+      width: 100%;
+      input {
+        border: solid #ccc;
+        border-width: 1px 0 1px 1px;
+        border-radius: 2px 0 0 2px;
+        flex: 1;
+        font-weight: 200;
+        height: 40px;
+        margin: 0;
+        min-width: 90px;
+        padding: 5px;
+        -webkit-appearance: textfield;
+      }
+      button {
         color: $COLOR_HEADER_TEXT;
-        display: flex;
-        justify-content: space-between;
-        row-gap: 1em;
-        align-items: center;
-        padding: 1em;
-        &--brand {
-
-        }
-        &--search {
-            align-items: center;
-            display: flex;
-            max-width: 600px;
-            width: 100%;
-            input {
-                border: solid #ccc;
-                border-width: 1px 0 1px 1px;
-                border-radius: 2px 0 0 2px;
-                flex: 1;
-                font-weight: 200;
-                height: 40px;
-                margin: 0;
-                min-width: 90px;
-                padding: 5px;
-                -webkit-appearance: textfield;
-            }
-            button {
-                color: $COLOR_HEADER_TEXT;
-                border: none;
-                cursor: pointer;
-                padding: 0;
-                background-color: #26882e;
-                border-radius: 0 2px 2px 0;
-                fill: white;
-                height: 40px;
-                min-width: 24px;
-                padding: 0 1em;
-            }
-        }
-        &--login {
-            margin-left: 1em;
-        }
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        background-color: #26882e;
+        border-radius: 0 2px 2px 0;
+        fill: white;
+        height: 40px;
+        min-width: 24px;
+        padding: 0 1em;
+      }
     }
-    &__navbar {
-        ul {
-            display: inline-block;
-            vertical-align: middle;
-        }
-        li {
-            display: inline-block;
-            float: left;
-            text-align: center;
-            padding: 0.6225em;
-            text-decoration: none;
-            line-height: 25px;
-            border-radius: 4px;
-        }
-        &--list {
-            color: $COLOR_HEADER_TEXT;
-            li {
-                
-            }
-        }
-        &--sub-list {
-            background-color: $COLOR_SUB_HEADER;
-            color: $COLOR_TEXT_LIGHT;
-            font-size: 0.75em;
-            li{
-                
-            }
-        }
+    &--login {
+      margin-left: 1em;
+      border: none;
+      background-color: unset;
+      color: white;
+      cursor: pointer;
     }
+  }
+  &__navbar {
+    ul {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    li {
+      display: inline-block;
+      float: left;
+      text-align: center;
+      padding: 0.6225em;
+      text-decoration: none;
+      line-height: 25px;
+      border-radius: 4px;
+    }
+    &--list {
+      color: $COLOR_HEADER_TEXT;
+      li {
+      }
+    }
+    &--sub-list {
+      background-color: $COLOR_SUB_HEADER;
+      color: $COLOR_TEXT_LIGHT;
+      font-size: 0.75em;
+      li {
+      }
+    }
+  }
 }
 // -------------- End Header Session --------------
 
 // -------------- Start Body Session --------------
-$c_name: '.body';
+$c_name: ".body";
 #{$c_name} {
-    //display: flex;
-    &__top {
-        width: 100%;
-        min-height: 100px;
-        background-color: $COLOR_GREY_LIGHT;
-        padding: 1rem 1rem;
-        &--title {
-            padding: 1em 0;
-            font-size: 1.5em;
-            h1 {
-                color: $COLOR_TITLE;
-            }
-        }
+  //display: flex;
+  &__top {
+    width: 100%;
+    min-height: 100px;
+    background-color: $COLOR_GREY_LIGHT;
+    padding: 1rem 1rem;
+    &--title {
+      padding: 1em 0;
+      font-size: 1.5em;
+      h1 {
+        color: $COLOR_TITLE;
+      }
     }
-
-    &__main {
-        display: flex;
-        flex-wrap: wrap;
-        padding: 0rem 1rem 1rem;
-        &--filter {
-            width: 25%;
-            padding-right: 1rem;
-        }
-
-        &--list {
-            width: 75%;
-            padding: 1rem;
-
-             ul {
-                display: flex;
-                flex-wrap: wrap;
-                list-style: none;
-                padding-left: 0;
-              }
-              
-            li {
-                flex: 0 0 33.3333%;
-                box-shadow: 0 0 1px grey;
-            }
-              
-        }
-    }
-
-    &__tool {
-        display: flex;
-        justify-content: space-between;
-        background-color: white;
-        color: #000000;
-        padding: 0rem 1rem;
-        height: 50px;
-    }
-}
-
-$c_name: '.breadcrumb';
-#{$c_name} {
-    ul {
-        display: flex;
-        flex-wrap: wrap;
-        list-style: none;
-        font-size: 0.8125em;
-        font-weight: bold;
-        margin: 0;
-        padding: 0;
-        li{
-            &:not(:last-child)::after {
-                display: inline-block;
-                margin: 0 .25rem;
-                content: "/";
-                color: $COLOR_BREADCRUMB_ICON;
-            }
-        }
-    }
-
-}
-
-$c_name: '.t_collapse';
-#{$c_name} {
-    &__btn {
-        display: flex;
-        justify-content: space-between;
-        background-color: $COLOR_GREY_LIGHT;
-        color: $COLOR_TEXT;
-        cursor: pointer;
-        padding: 18px;
-        width: 100%;
-        border: none;
-        text-align: left;
-        outline: none;
-        font-size: 15px;
-        border-bottom: 1px solid $COLOR_BORDER;
-
-        &:hover {
-            background-color: $COLOR_BG;
-        }
-        &.active {
-            background-color: $COLOR_BG;
-        }
-    }
-
-    &__content {
-        display: none;
-        overflow: hidden;
-        background-color: $COLOR_BG;
-        line-height: normal;
-    }
-
-    ul > li {
-        width: 100%;
-        height: 30px;
-        align-items: center;
-        display: flex;
-
-        label {
-            padding-left: 10px;
-        }
-    }
-  
   }
 
-  $c_name: '.filter-btn';
-  #{$c_name} {
+  &__main {
+    display: flex;
+    width: 100%;
+    padding: 0rem 1rem 1rem;
+    &--filter {
+      width: 25%;
+      padding-right: 1rem;
+    }
+
+    &--list {
+      flex: 1;
+      padding: 1rem;
+      margin-bottom: 90px;
+      container-type: inline-size;
+
+      ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        list-style: none;
+        padding-left: 0;
+
+        @container (min-width: 800px) {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      li {
+        box-shadow: 0 0 1px grey;
+      }
+    }
+    
+    
+
+  }
+
+  &__main_detail{
+    
+    margin: auto;
+    max-width: 930px;
+    padding: 0rem 1rem 1rem;
+    &--inner {
+      display: flex;
+      width: 100%;
+    }
+  }
+
+  &__tool {
+    display: flex;
+    justify-content: space-between;
     background-color: white;
-    width: 244px;
+    color: #000000;
+    padding: 0rem 1rem;
     height: 50px;
+  }
+}
+
+$c_name: ".breadcrumb";
+#{$c_name} {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    font-size: 0.8125em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    li {
+      &:not(:last-child)::after {
+        display: inline-block;
+        margin: 0 0.25rem;
+        content: "/";
+        color: $COLOR_BREADCRUMB_ICON;
+      }
+    }
+  }
+}
+
+$c_name: ".t_collapse";
+#{$c_name} {
+  &__btn {
+    display: flex;
+    justify-content: space-between;
+    background-color: $COLOR_GREY_LIGHT;
+    color: $COLOR_TEXT;
     cursor: pointer;
+    padding: 18px;
+    width: 100%;
     border: none;
     text-align: left;
     outline: none;
-    font-size: 20px;
-    i {
-        padding-right: 10px;
+    font-size: 15px;
+    border-bottom: 1px solid $COLOR_BORDER;
+
+    &:hover {
+      background-color: $COLOR_BG;
+    }
+    &.active {
+      background-color: $COLOR_BG;
+    }
+  }
+
+  &__content {
+    display: none;
+    overflow: hidden;
+    background-color: $COLOR_BG;
+    line-height: normal;
+  }
+
+  ul > li {
+    width: 100%;
+    height: 30px;
+    align-items: center;
+    display: flex;
+
+    label {
+      padding-left: 10px;
+    }
+  }
+}
+
+$c_name: ".filter-btn";
+#{$c_name} {
+  background-color: white;
+  width: 244px;
+  height: 50px;
+  cursor: pointer;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+  i {
+    padding-right: 10px;
+  }
+
+  &.filter-btn-mobile {
+    display: none;
+  }
+}
+
+// Card
+$c_name: ".t_card";
+#{$c_name} {
+  cursor: pointer;
+  line-height: 1.35;
+
+  li {
+    margin-bottom: 20px;
+
+    &:not(:last-child) {
+    }
+  }
+  &__image {
+    height: 150px;
+    width: 100%;
+    img {
+      object-fit: fill;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__content {
+    padding: 10px;
+  }
+
+  .t_ranking {
+    margin-right: -5px;
+    .fa-solid {
+      color: #f9bf00;
+    }
+    &__number {
+      font-size: 0.875rem;
+      color: #cccccc;
+    }
+  }
+
+  .t_price {
+    font-size: 1.25rem;
+  }
+
+  .t_btn {
+    height: 35px;
+    cursor: pointer;
+    border-radius: 3px;
+
+    &__card {
+      width: 35px;
+      border: 1px solid black;
+      background-color: white;
+    }
+    &__live {
+      border: 1px solid #087096;
+      background-color: white;
+      color: #087096;
+      font-weight: bold;
+    }
+  }
+
+  t_sold {
+    font-size: 0.875rem;
+    color: #cccccc;
+  }
+
+  &__col {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 5px;
+  }
+}
+
+// Detail Page
+//
+$c_name: ".detail";
+#{$c_name} {
+  &__content {
+    flex: 0 0 75%;
+  }
+
+  &__sidebar {
+    flex: 0 0 25%;
+    
+    &--action {
+      align-items: flex-end;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+// -------------- End Body Session --------------
+
+// -------------- Start Footer Session --------------
+$c_name: ".t_footer";
+#{$c_name} {
+  color: white;
+  background-color: #262626;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  min-height: 100px;
+  padding: 1rem;
+
+  &.x-colophon {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+  }
+
+  &__top {
+    min-height: 40px;
+  }
+
+  &__bottom {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    border-top: 1px solid #666666;
+    padding: 1rem 0;
+    font-size: 0.75rem;
+  }
+}
+// -------------- End Footer Session --------------
+
+// -------------- Start Login Form --------------
+$c_name: ".t_login";
+#{$c_name} {
+
+  width: 500px;
+  height: 800px;
+  display: none;
+  position: fixed; /* Stay in place */
+  z-index: 100; /* Sit on top */
+  padding-top: 86px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 16px 30px 50px 30px;
+    border: 1px solid #888;
+    width: 420px;
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: bold;
+      text-align: center;
     }
 
-    &.filter-btn-mobile{
-        display: none;
+    &--close {
+      text-align: right;
+      cursor: pointer;
+    }
+  }
+
+  &__username {
+
+  }
+
+  &__password {
+
+  }
+
+  &__btn {
+    background-color: #E40046;
+    &--gmail {
+      background-color: #18BDFC;
+    }
+
+    &--facebook {
+      background-color: #3F5FA7;
+    }
+  }
+
+  .t_input  {
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #E40046;
+    height: 30px;
+    //margin-bottom: 16px;
+  }
+
+  .t_input:focus  {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  .t_btn{
+    font-size: 1rem;
+    color: white;
+    border: none;
+    outline: none;
+    height: 40px;
+    //margin-top: 16px;
+    i {
+      margin-right: 10px;
+    }
+  }
+}
+// -------------- End Login Form --------------
+
+//==================================== Media
+
+// Start Media Phone
+@media (min-width: 0px) and (max-width: 480px) {
+  /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+  // Start Header Session
+  $c_name: ".header";
+  #{$c_name} {
+    &__top {
+      flex-wrap: wrap;
+      &--brand {
+        order: 1;
+      }
+      &--search {
+        order: 3;
+        width: 100%;
+        input {
+        }
+        button {
+        }
+      }
+      &--login {
+        order: 2;
+      }
+    }
+    &__navbar {
+      ul {
+      }
+      li {
+      }
+      &--list {
+        color: $COLOR_HEADER_TEXT;
+        li {
+        }
+      }
+      &--sub-list {
+        li {
+        }
+      }
+    }
+  }
+  // End Header Session
+
+  // -------------- Start Body Session --------------
+  $c_name: ".body";
+  #{$c_name} {
+    //display: flex;
+    &__top {
+      padding: 10px;
+      &--title {
+        padding: 10px 0;
+        h1 {
+        }
+      }
+    }
+
+    &__main {
+      padding: 10px;
+      &--filter {
+        height: 100%;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: white;
+        padding-right: 0;
+        z-index: 1000;
+      }
+
+      &--list {
+        width: 100%;
+        padding: 0.3125rem;
+
+        ul {
+          display: inline;
+        }
+
+        li {
+          flex: 1;
+          box-shadow: 0 0 1px grey;
+        }
+      }
+
+      &--detail {
+
+      }
+    }
+  }
+
+  $c_name: ".filter-btn";
+  #{$c_name} {
+    i {
+    }
+
+    &.filter-btn-mobile {
+      display: block;
     }
   }
 
   // Card
-  $c_name: '.t_card';
+  $c_name: ".t_card";
   #{$c_name} {
+    li {
+      margin-bottom: 16px;
+      padding-right: 0px;
+    }
 
     &__image {
-        height: 150px;
-        width: 100%;
-        img {
-            object-fit: fill;
-            height: 100%;
-            width: 100%;
-        }
+      img {
+      }
     }
 
     &__content {
-        padding: 10px;
-
     }
 
-    .ranking {
-        .fa-solid {
-            color: #F9BF00;
-        }
+    .t_ranking {
+      .fa-solid {
+      }
+      &__number {
+      }
+    }
+
+    .t_price {
     }
 
     .t_btn {
-        height: 35px;
-        cursor: pointer;
-        border-radius: 3px;
-        
-        &__card {
-            width: 35px;
-            border: 1px solid black;
-            background-color: white;
-        }
-        &__live {
-            border: 1px solid #087096;
-            background-color: white;
-            color: #087096;
-            font-weight: bold;
-        }
+      &__card {
+      }
+      &__live {
+      }
+    }
+
+    t_sold {
     }
 
     &__col {
-        display: flex;
-        justify-content: space-between;
     }
   }
 
-
-  
-// -------------- End Body Session --------------
-
-//------ Media
-
-// Start Media Phone
-@media (min-width: 0px) and (max-width: 480px) {
-    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ 
-    // Start Header Session
-    $c_name: '.header';
-    #{$c_name} {
-        
-        &__top {
-            flex-wrap: wrap;
-            &--brand {
-                order: 1;
-            }
-            &--search {
-                order: 3;
-                width: 100%;
-                input {
-                    
-                }
-                button {
-                   
-                }
-            }
-            &--login {
-                order: 2;
-            }
-        }
-        &__navbar {
-            ul {
-               
-            }
-            li {
-                
-            }
-            &--list {
-                color: $COLOR_HEADER_TEXT;
-                li {
-                    
-                }
-            }
-            &--sub-list {
-                
-                li{
-                    
-                }
-            }
-        }
-    }
-    // End Header Session
-
-    // -------------- Start Body Session --------------
-    $c_name: '.body';
-    #{$c_name} {
-        //display: flex;
-        &__top {
-            padding: 10px;
-            &--title {
-                padding: 10px 0;
-                h1 {
-                }
-            }
-        }
-
-        &__main {
-            padding: 10px;
-            &--filter {
-                height: 100%;
-                position: fixed;
-                left: 0;
-                bottom: 0;
-                width: 100%;
-                background-color: white;
-                padding-right: 0;
-                z-index: 1000;
-            }
-
-            &--list {
-                width: 100%;
-            }
-        }
-    }
-
-    $c_name: '.filter-btn';
-  #{$c_name} {
-   
-    i {
-      
-    }
-
-    &.filter-btn-mobile{
-        display: block;
-    }
- 
-  }
-    // -------------- End Body Session --------------
-
+  // -------------- End Body Session --------------
 }
 // End Media Phone
 
 // Start Media Tablet
 @media (min-width: 481px) and (max-width: 768px) {
-
 }
 // End Media Tablet

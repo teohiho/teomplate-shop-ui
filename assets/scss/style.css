@@ -13792,7 +13792,9 @@ html {
   font-size: 16px;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -13809,7 +13811,8 @@ a:hover {
   opacity: 0.8;
 }
 
-input[type=checkbox], input[type=radio] {
+input[type=checkbox],
+input[type=radio] {
   vertical-align: middle;
   position: relative;
   bottom: 1px;
@@ -13862,6 +13865,10 @@ input[type=checkbox], input[type=radio] {
 }
 .header__top--login {
   margin-left: 1em;
+  border: none;
+  background-color: unset;
+  color: white;
+  cursor: pointer;
 }
 .header__navbar ul {
   display: inline-block;
@@ -13899,7 +13906,7 @@ input[type=checkbox], input[type=radio] {
 }
 .body__main {
   display: flex;
-  flex-wrap: wrap;
+  width: 100%;
   padding: 0rem 1rem 1rem;
 }
 .body__main--filter {
@@ -13907,18 +13914,34 @@ input[type=checkbox], input[type=radio] {
   padding-right: 1rem;
 }
 .body__main--list {
-  width: 75%;
+  flex: 1;
   padding: 1rem;
+  margin-bottom: 90px;
+  container-type: inline-size;
 }
 .body__main--list ul {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
   list-style: none;
   padding-left: 0;
 }
+@container (min-width: 800px) {
+  .body__main--list ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 .body__main--list li {
-  flex: 0 0 33.3333%;
   box-shadow: 0 0 1px grey;
+}
+.body__main_detail {
+  margin: auto;
+  max-width: 930px;
+  padding: 0rem 1rem 1rem;
+}
+.body__main_detail--inner {
+  display: flex;
+  width: 100%;
 }
 .body__tool {
   display: flex;
@@ -13998,6 +14021,13 @@ input[type=checkbox], input[type=radio] {
   display: none;
 }
 
+.t_card {
+  cursor: pointer;
+  line-height: 1.35;
+}
+.t_card li {
+  margin-bottom: 20px;
+}
 .t_card__image {
   height: 150px;
   width: 100%;
@@ -14011,8 +14041,18 @@ input[type=checkbox], input[type=radio] {
 .t_card__content {
   padding: 10px;
 }
-.t_card .ranking .fa-solid {
-  color: #F9BF00;
+.t_card .t_ranking {
+  margin-right: -5px;
+}
+.t_card .t_ranking .fa-solid {
+  color: #f9bf00;
+}
+.t_card .t_ranking__number {
+  font-size: 0.875rem;
+  color: #cccccc;
+}
+.t_card .t_price {
+  font-size: 1.25rem;
 }
 .t_card .t_btn {
   height: 35px;
@@ -14029,6 +14069,120 @@ input[type=checkbox], input[type=radio] {
   background-color: white;
   color: #087096;
   font-weight: bold;
+}
+.t_card t_sold {
+  font-size: 0.875rem;
+  color: #cccccc;
+}
+.t_card__col {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 5px;
+}
+
+.detail__content {
+  flex: 0 0 75%;
+}
+.detail__sidebar {
+  flex: 0 0 25%;
+}
+.detail__sidebar--action {
+  align-items: flex-end;
+  display: flex;
+  justify-content: center;
+}
+
+.t_footer {
+  color: white;
+  background-color: #262626;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  min-height: 100px;
+  padding: 1rem;
+}
+.t_footer.x-colophon {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+}
+.t_footer__top {
+  min-height: 40px;
+}
+.t_footer__bottom {
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  border-top: 1px solid #666666;
+  padding: 1rem 0;
+  font-size: 0.75rem;
+}
+
+.t_login {
+  width: 500px;
+  height: 800px;
+  display: none;
+  position: fixed; /* Stay in place */
+  z-index: 100; /* Sit on top */
+  padding-top: 86px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+.t_login__form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 16px 30px 50px 30px;
+  border: 1px solid #888;
+  width: 420px;
+}
+.t_login__form h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+}
+.t_login__form--close {
+  text-align: right;
+  cursor: pointer;
+}
+.t_login__btn {
+  background-color: #E40046;
+}
+.t_login__btn--gmail {
+  background-color: #18BDFC;
+}
+.t_login__btn--facebook {
+  background-color: #3F5FA7;
+}
+.t_login .t_input {
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #E40046;
+  height: 30px;
+}
+.t_login .t_input:focus {
+  border-color: inherit;
+  box-shadow: none;
+}
+.t_login .t_btn {
+  font-size: 1rem;
+  color: white;
+  border: none;
+  outline: none;
+  height: 40px;
+}
+.t_login .t_btn i {
+  margin-right: 10px;
 }
 
 @media (min-width: 0px) and (max-width: 480px) {
@@ -14070,8 +14224,20 @@ input[type=checkbox], input[type=radio] {
   }
   .body__main--list {
     width: 100%;
+    padding: 0.3125rem;
+  }
+  .body__main--list ul {
+    display: inline;
+  }
+  .body__main--list li {
+    flex: 1;
+    box-shadow: 0 0 1px grey;
   }
   .filter-btn.filter-btn-mobile {
     display: block;
+  }
+  .t_card li {
+    margin-bottom: 16px;
+    padding-right: 0px;
   }
 }/*# sourceMappingURL=style.css.map */
